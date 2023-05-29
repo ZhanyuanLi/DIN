@@ -36,9 +36,9 @@ def build_map(df, col_name):
 
 
 if __name__ == '__main__':
-    with open('../raw_data/reviews.pkl', 'rb') as f:
-        reviews_df = pickle.load(f)
-        reviews_df = reviews_df[['reviewerID', 'asin', 'unixReviewTime']]
+    with open('../raw_data/reviews.pkl', 'rb') as f:  # rb：读取二进制文件
+        reviews_df = pickle.load(f)  # pickle.load(f)反序列化对象，将文件中的数据解析为一个python对象
+        reviews_df = reviews_df[['reviewerID', 'asin', 'unixReviewTime']]  # 提取列
     with open('../raw_data/meta.pkl', 'rb') as f:
         meta_df = pickle.load(f)
         meta_df = meta_df[['asin', 'categories']]
